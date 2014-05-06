@@ -72,7 +72,7 @@ module.exports = function (grunt) {
                 dest: 'dist/test_bundle.js',
                 options: {
                     external: ['src/**/*.js'],
-                    exclude: ['./node_modules/underscore/underscore.js'],
+                    exclude: ['./node_modules/underscore/underscore.js', './node_modules/jquery/dist/jquery.js'],
                 }
             },
         },
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
             src: 'dist/app_bundle.js',
             options: {
                 specs: 'dist/test_bundle.js',
-                vendor: ['./node_modules/jquery/dist/jquery.js', 'libs/underscore.js']
+                vendor: ['./node_modules/jquery/dist/jquery.js', './node_modules/underscore/underscore.js']
             }
         },
         uglify: {
