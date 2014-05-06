@@ -25,10 +25,24 @@ module.exports = function (grunt) {
             },
         },
         jasmine_node: {
-            specNameMatcher: "Spec",
-            specFolders: ["test/spec/common"],
-            projectRoot: "test/spec/node",
-            forceExit: true,
+            options: {
+                forceExit: true,
+                match: '.',
+                matchall: false,
+                extensions: 'js',
+                specNameMatcher: 'Spec',
+                jUnit: {
+                    report: true,
+                    savePath : "./dist/reports/jasmine/",
+                    useDotNotation: true,
+                    consolidate: true
+                }
+            },
+            all: ["test/spec/common/"]
+            // specNameMatcher: "Spec",
+            // specFolders: ["test/spec/common"],
+            // projectRoot: "test/spec/node",
+            // forceExit: true,
         },
         jshint: {
             all: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
@@ -41,7 +55,7 @@ module.exports = function (grunt) {
                 src: ['./src/browser/App.js'],
                 dest: 'dist/app_bundle_main.js',
                 options: {
-                    alias: ["./src/browser/App.js:SampleApp"],
+                    alias: ["./src/browser/App.js:SampleApp"]
                 },
             },
             src: {
@@ -58,7 +72,7 @@ module.exports = function (grunt) {
                 dest: 'dist/test_bundle.js',
                 options: {
                     external: ['src/**/*.js'],
-                    ignore: ['./node_modules/underscore/underscore.js'],
+                    exclude: ['./node_modules/underscore/underscore.js'],
                 }
             },
         },
@@ -66,7 +80,7 @@ module.exports = function (grunt) {
             src: 'dist/app_bundle.js',
             options: {
                 specs: 'dist/test_bundle.js',
-                vendor: ['libs/jquery-1.9.1.js', 'libs/underscore.js']
+                vendor: ['./node_modules/jquery/dist/jquery.js', 'libs/underscore.js']
             }
         },
         uglify: {
