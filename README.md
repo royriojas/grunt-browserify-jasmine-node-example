@@ -1,3 +1,11 @@
+*NOTE*
+
+This fork:
+
+- update the dependecies to the latest.
+- include browserify-shim 
+- jQuery and Underscore are loaded from the global scope.
+
 # grunt-browserify-jasmine-node-example [![Build Status](https://travis-ci.org/amitayd/grunt-browserify-jasmine-node-example.png)](https://travis-ci.org/amitayd/grunt-browserify-jasmine-node-example)
 
 An example of how to set up a project for cross-developing for the browser and node.js.
@@ -79,8 +87,10 @@ A client could load it in javascript using:
 You can see the application running at [test/AppRunner.html](test/AppRunner.html)
 
 ### Notes
- * underscore.js is packaged from the npm package to the built app_bundle. Alternatives would be packaging it in a different bundle, but as a browserified file, or loading it as an external script file, and using its global variable. This is currently (AFAIK) not supported in browserify, but can be achieved through a hack to the code. This is currently commented out in HelloWorld.js
- * Jquery is loaded as a window global and not as a module for require(). An alternative would be to use a jquery version which supports being exposed as a commonJS module, or using browserify-shim to wrap it so it could be used with a require().
+ *  ~~underscore.js is packaged from the npm package to the built app_bundle. Alternatives would be packaging it in a different bundle, but as a browserified file, or loading it as an external script file, and using its global variable. This is currently (AFAIK) not supported in browserify, but can be achieved through a hack to the code. This is currently commented out in HelloWorld.js ~~
+ *  ~~Jquery is loaded as a window global and not as a module for require(). An alternative would be to use a jquery version which supports being exposed as a commonJS module, or using browserify-shim to wrap it so it could be used with a require(). ~~
+
+ Both jQuery and underscore are taken from the 
 
 
 

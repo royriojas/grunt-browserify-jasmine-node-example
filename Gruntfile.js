@@ -8,7 +8,8 @@ module.exports = function (grunt) {
         }, glob);
     };
 
-    process.env.BROWSERIFYSHIM_DIAGNOSTICS=1;
+    //to allow diagnostics 
+    //process.env.BROWSERIFYSHIM_DIAGNOSTICS=1;
 
     // Project configuration.
     grunt.initConfig({
