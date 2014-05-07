@@ -8,6 +8,8 @@ module.exports = function (grunt) {
         }, glob);
     };
 
+    process.env.BROWSERIFYSHIM_DIAGNOSTICS=1;
+
     // Project configuration.
     grunt.initConfig({
         // Metadata.
@@ -55,7 +57,9 @@ module.exports = function (grunt) {
                 src: ['./src/browser/App.js'],
                 dest: 'dist/app_bundle_main.js',
                 options: {
-                    alias: ["./src/browser/App.js:SampleApp"]
+                    alias: ["./src/browser/App.js:SampleApp"],
+                    exclude: ['./node_modules/underscore/underscore.js', './node_modules/jquery/dist/jquery.js'],
+                    transform: ['browserify-shim']
                 },
             },
             src: {
@@ -64,7 +68,9 @@ module.exports = function (grunt) {
                 options: {
                     require: expandFiles(
                         ['./src/common/**/*.js',
-                        './src/browser/**/*.js'])
+                        './src/browser/**/*.js']),
+                    exclude: ['./node_modules/underscore/underscore.js', './node_modules/jquery/dist/jquery.js'],
+                    transform: ['browserify-shim']
                 }
             },
             test: {
@@ -73,6 +79,7 @@ module.exports = function (grunt) {
                 options: {
                     external: ['src/**/*.js'],
                     exclude: ['./node_modules/underscore/underscore.js', './node_modules/jquery/dist/jquery.js'],
+                    transform: ['browserify-shim']
                 }
             },
         },

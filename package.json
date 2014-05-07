@@ -8,6 +8,12 @@
     "email": "amitayd@gmail.com",
     "url": "http://doboism.com"
   },
+
+  "browserify-shim": {
+    "jquery": "global:$",
+    "underscore" : "global:_"
+  },
+
   "repository": {
     "type": "git",
     "url": "git://github.com/amitayd/grunt-browserify-jasmine-node-example.git"
@@ -43,7 +49,8 @@
     "grunt-jasmine-node": "~0.2.1",
     "underscore": "~1.4.4",
     "browserify": "~3",
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "browserify-shim": "~3.4.1"
   },
   "keywords": [
     "grunt",
