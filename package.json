@@ -44,11 +44,13 @@
     "grunt-browserify": "~2.0.8",
     "jasmine-node": "~2.0.0-beta4",
     "grunt-contrib-jasmine": "~0.6.4",
-    "grunt-cli": "~0.1.13",
     "grunt-jasmine-node": "~0.2.1",
     "browserify": "~3.46.0",
     "browserify-shim": "~3.4.1",
-    "jasmine-core": "~2.0.0"
+    "jasmine-core": "~2.0.0",
+    "matchdep": "~0.3.0",
+    "grunt-jsbeautifier": "git://github.com/royriojas/grunt-jsbeautifier#62b8e39",
+    "stringformat": "0.0.5"
   },
   "keywords": [
     "grunt",

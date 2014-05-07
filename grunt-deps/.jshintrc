@@ -1,0 +1,40 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "boss": true,
+  "eqnull": true,
+  "browser": true,
+  "expr": true,
+  "laxcomma": true,
+  "multistr": true,
+  "node": true,
+  "globals": {
+    "stop": true,
+    "start": true,
+    "jQuery": true,
+    "kno": true,
+    "doT": true,
+    "Element": true,
+    "console": true,
+    "module": true,
+    "exports": true,
+    "it"         : true,
+    "xit"        : true,
+    "describe"   : true,
+    "xdescribe"  : true,
+    "beforeEach" : true,
+    "afterEach"  : true,
+    "expect"     : true,
+    "spyOn"      : true,
+
+    "define": true,
+    "require": true
+  }
+}
+
